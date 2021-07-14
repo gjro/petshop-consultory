@@ -61,7 +61,7 @@ class donosControllers {
     }
 
     //Excluir Dono
-    destroy(req, res) {
+    async destroy(req, res) {
         try {
             const id = parseInt(req.params.id);
             const dono = await Dono.findByPk(id);
