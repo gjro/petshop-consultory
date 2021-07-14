@@ -6,10 +6,7 @@ import Dono from "../app/models/dono";
 import Funcionario from "../app/models/funcionario";
 import Pet from "../app/models/pet";
 
-const consultas = [Consulta];
-const donos = [Dono];
-const funcionarios = [Funcionario];
-const pets = [Pet];
+const models = [Dono, Pet, Funcionario, Consulta];
 
 class Database {
     constructor() {
@@ -18,12 +15,7 @@ class Database {
     }
 
     init() {
-        consultas.forEach((consulta) => consulta.init(this.connection));
-        donos.forEach((dono) => dono.init(this.connection));
-        funcionarios.forEach((funcionario) =>
-            funcionario.init(this.connection)
-        );
-        pets.forEach((pet) => pet.init(this.connection));
+        models.forEach((model) => model.init(this.connection));
     }
 }
 
