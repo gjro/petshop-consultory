@@ -5,7 +5,7 @@ class Pet extends Model {
         super.init(
             {
                 nome: Sequelize.STRING,
-                donoID: Sequelize.INTEGER,
+                donoid: Sequelize.INTEGER,
                 raca: Sequelize.STRING,
             },
             {

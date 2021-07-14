@@ -5,7 +5,7 @@ class Dono extends Model {
         super.init(
             {
                 nome: Sequelize.STRING,
-                CPF: Sequelize.STRING,
+                cpf: Sequelize.STRING,
                 telefone: Sequelize.STRING,
                 //status: Sequelize.ENUM("ACTIVE", "ARCHIVED"),
             },

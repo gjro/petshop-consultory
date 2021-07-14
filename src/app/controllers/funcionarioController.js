@@ -26,11 +26,11 @@ class funcionarioControllers {
     //Cria empresa
     async create(req, res) {
         try {
-            const { nome, CPF, Cargo } = req.body;
+            const { nome, cpf, cargo } = req.body;
             const novoFuncionario = await Funcionario.create({
-                Nome,
-                CPF,
-                Cargo,
+                nome,
+                cpf,
+                cargo,
             });
 
             return res.status(201).json(novoFuncionario);
@@ -43,15 +43,15 @@ class funcionarioControllers {
     async update(req, res) {
         try {
             const id = parseInt(req.params.id);
-            const { nome, CPF, Cargo } = req.body;
+            const { nome, cpf, cargo } = req.body;
 
             const retornoStatus = id >= 0 ? 200 : 400;
 
             const funcionario = await Funcionario.findByPk(id);
             const novoFuncionario = await empresa.update({
-                Nome,
-                CPF,
-                Cargo,
+                nome,
+                cpf,
+                cargo,
             });
 
             return res.status(retornoStatus).json(novoFuncionario);

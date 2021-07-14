@@ -26,10 +26,10 @@ class donosControllers {
     //Criar Dono
     async create(req, res) {
         try {
-            const { nome, CPF, telefone } = req.body;
+            const { nome, cpf, telefone } = req.body;
             const novoDono = await Dono.create({
                 nome,
-                CPF,
+                cpf,
                 telefone,
             });
 
@@ -43,14 +43,14 @@ class donosControllers {
     async update(req, res) {
         try {
             const id = parseInt(req.params.id);
-            const { nome, CPF, telefone } = req.body;
+            const { nome, cpf, telefone } = req.body;
 
             const retornoStatus = id >= 0 ? 200 : 400;
 
             const dono = await Dono.findByPk(id);
             const novoDono = await dono.update({
                 nome,
-                CPF,
+                cpf,
                 telefone,
             });
 

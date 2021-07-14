@@ -13,7 +13,7 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            donoID: {
+            donoid: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 references: {

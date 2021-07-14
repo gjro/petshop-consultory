@@ -26,10 +26,10 @@ class consultaControllers {
     //Criar Consulta
     async create(req, res) {
         try {
-            const { petID, funcionarioID, custo } = req.body;
+            const { petid, funcionarioid, custo } = req.body;
             const novoDono = await Dono.create({
-                petID,
-                funcionarioID,
+                petid,
+                funcionarioid,
                 custo,
             });
 
@@ -43,13 +43,13 @@ class consultaControllers {
     async update(req, res) {
         try {
             const id = parseInt(req.params.id);
-            const { petID, funcionariosID, custo } = req.body;
+            const { petid, funcionariosID, custo } = req.body;
 
             const retornoStatus = id >= 0 ? 200 : 400;
 
             const consulta = await Consulta.findByPk(id);
             const novaConsulta = await consulta.update({
-                petID,
+                petid,
                 funcionariosID,
                 custo,
             });
