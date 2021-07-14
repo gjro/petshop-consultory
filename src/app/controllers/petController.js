@@ -61,7 +61,7 @@ class petsControllers {
     }
 
     //Excluir Pet
-    destroy(req, res) {
+    async destroy(req, res) {
         try {
             const id = parseInt(req.params.id);
             const pet = await Pet.findByPk(id);
