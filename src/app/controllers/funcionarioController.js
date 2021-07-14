@@ -3,7 +3,7 @@ import Funcionario from "../models/funcionario"
 
 
 class funcionarioControllers{
-    //Listagem da empresas
+    //Listagem de Funcionairos  
     async index(req,res){
 
         const data = await Funcionario.findAll({
@@ -26,7 +26,7 @@ class funcionarioControllers{
       }
     }
 
-    //Cria empresa
+    //Cria Funcionairo  
     async create(req,res){
       try{
         const {nome,CPF,Cargo} = req.body
@@ -59,7 +59,7 @@ class funcionarioControllers{
         }
     }
 
-    //Excluir empresa    
+    //Excluir Funcionairo    
     destroy(req,res){
         try{
             const id = parseInt(req.params.id)
