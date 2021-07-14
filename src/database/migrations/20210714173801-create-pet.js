@@ -1,21 +1,42 @@
-'use strict';
+"use strict";
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
-  },
+    up: async (queryInterface, Sequelize) => {
+        await queryInterface.createTable("pets", {
+            id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                autoIncrement: true,
+                primaryKey: true,
+            },
+            nome: {
+                type: Sequelize.STRING,
+                allowNull: false,
+            },
+            donoID: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                references: {
+                    model: "donos",
+                    key: "id",
+                },
+            },
+            raca: {
+                type: Sequelize.STRING,
+                allowNull: false,
+            },
+            created_at: {
+                type: Sequelize.DATE,
+                allowNull: false,
+            },
+            updated_at: {
+                type: Sequelize.DATE,
+                allowNull: false,
+            },
+        });
+    },
 
-  down: async (queryInterface, Sequelize) => {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
-  }
+    down: async (queryInterface, Sequelize) => {
+        await queryInterface.dropTable("pets");
+    },
 };
