@@ -2,7 +2,7 @@
 
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable("donos", {
+        await queryInterface.createTable("pets", {
             id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
@@ -13,15 +13,17 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            CPF: {
-                type: Sequelize.STRING,
+            donoID: {
+                type: Sequelize.INTEGER,
                 allowNull: false,
-                unique: true,
+                references: {
+                    model: "donos",
+                    key: "id",
+                },
             },
-            telefone: {
+            raca: {
                 type: Sequelize.STRING,
                 allowNull: false,
-                unique: true,
             },
             created_at: {
                 type: Sequelize.DATE,
@@ -35,6 +37,6 @@ module.exports = {
     },
 
     down: async (queryInterface, Sequelize) => {
-        await queryInterface.dropTable("donos");
+        await queryInterface.dropTable("pets");
     },
 };
