@@ -13,12 +13,12 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            CPF: {
+            cpf: {
                 type: Sequelize.STRING,
                 allowNull: false,
                 unique: true,
             },
-            Cargo: {
+            cargo: {
                 type: Sequelize.STRING,
                 allowNull: false,
                 unique: false,

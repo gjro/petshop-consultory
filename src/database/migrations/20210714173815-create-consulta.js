@@ -8,8 +8,8 @@ module.exports = {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
-            },            
-            petID: {
+            },
+            pet_id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 references: {
@@ -17,17 +17,17 @@ module.exports = {
                     key: "id",
                 },
             },
-            funcionarioID: {
-              type: Sequelize.INTEGER,
-              allowNull: false,
-              references: {
-                  model: "funcionarios",
-                  key: "id",
-              },
+            funcionario_id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                references: {
+                    model: "funcionarios",
+                    key: "id",
+                },
             },
-            custo:{
-              type:Sequelize.FLOAT,
-              allowNull: false,
+            custo: {
+                type: Sequelize.FLOAT,
+                allowNull: false,
             },
             created_at: {
                 type: Sequelize.DATE,
