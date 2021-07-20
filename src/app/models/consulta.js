@@ -14,6 +14,10 @@ class Consulta extends Model {
             }
         );
     }
+    static associate(models){
+        this.belongsTo(models.Dono, {foreignKey: "donoid"}) // dono
+        this.belongsTo(models.Pet, {foreignKey:"petID"}) // pet
+    }
 }
 
 export default Consulta;

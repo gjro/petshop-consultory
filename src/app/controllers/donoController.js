@@ -69,7 +69,7 @@ class donosControllers {
 
             dono.destroy();
 
-            return res.status(status);
+            return res.status(status) + "destruido com sucesso";
         } catch (e) {
             console.log("Error: " + e);
         }

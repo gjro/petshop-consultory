@@ -5,13 +5,15 @@ class Pet extends Model {
         super.init(
             {
                 nome: Sequelize.STRING,
-                donoid: Sequelize.INTEGER,
                 raca: Sequelize.STRING,
             },
             {
                 sequelize,
             }
         );
+    }
+    static associate(models){
+        this.belongsTo(models.Dono, {foreignKey: "dono_id"})
     }
 }
 

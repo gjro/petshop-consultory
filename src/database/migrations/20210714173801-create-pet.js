@@ -13,14 +13,6 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
-            donoid: {
-                type: Sequelize.INTEGER,
-                allowNull: false,
-                references: {
-                    model: "donos",
-                    key: "id",
-                },
-            },
             raca: {
                 type: Sequelize.STRING,
                 allowNull: false,
@@ -33,6 +25,16 @@ module.exports = {
                 type: Sequelize.DATE,
                 allowNull: false,
             },
+            dono_id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                references: {
+                    model: "donos",
+                    key: "id",
+                },
+                onUpdate:"CASCADE",
+                onDelete:"CASCADE"
+            }
         });
     },
 

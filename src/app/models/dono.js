@@ -14,6 +14,9 @@ class Dono extends Model {
             }
         );
     }
+    static associate(models){
+        this.hasMany(models.Pet)
+    }
 }
 
 export default Dono;

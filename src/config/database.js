@@ -2,7 +2,7 @@ module.exports = {
     dialect: "postgres",
     host: "localhost",
     username: "postgres",
-    password: "admin",
+    password: "aula",
     database: "petshop-consultory",
     define: {
         timestamp: true, //Criado em e Atualizado em

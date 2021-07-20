@@ -16,6 +16,8 @@ module.exports = {
                     model: "pets",
                     key: "id",
                 },
+                onUpdate:"CASCADE",
+                onDelete:"CASCADE"
             },
             funcionarioID: {
               type: Sequelize.INTEGER,
@@ -24,6 +26,8 @@ module.exports = {
                   model: "funcionarios",
                   key: "id",
               },
+              onUpdate:"CASCADE",
+              onDelete:"CASCADE"
             },
             custo:{
               type:Sequelize.FLOAT,

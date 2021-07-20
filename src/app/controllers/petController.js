@@ -26,11 +26,11 @@ class petsControllers {
     //Criar Pet
     async create(req, res) {
         try {
-            const { nome, donoid, raca } = req.body;
+            const { nome, dono_id, raca } = req.body;
             const novoPet = await Pet.create({
                 nome,
-                donoid,
                 raca,
+                dono_id,
             });
 
             return res.status(201).json(novoPet);
@@ -43,15 +43,15 @@ class petsControllers {
     async update(req, res) {
         try {
             const id = parseInt(req.params.id);
-            const { nome, donoid, raca } = req.body;
+            const { nome, dono_id, raca } = req.body;
 
             const retornoStatus = id >= 0 ? 200 : 400;
 
             const pet = await Pet.findByPk(id);
             const novoPet = await pet.update({
                 nome,
-                donoid,
                 raca,
+                dono_id
             });
 
             return res.status(retornoStatus).json(novoPet);
