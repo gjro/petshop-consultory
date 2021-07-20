@@ -16,7 +16,10 @@ module.exports = {
                     model: "pets",
                     key: "id",
                 },
+                onUpdate:"CASCADE",
+                onDelete:"CASCADE"
             },
+<<<<<<< HEAD
             funcionario_id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
@@ -24,6 +27,17 @@ module.exports = {
                     model: "funcionarios",
                     key: "id",
                 },
+=======
+            funcionarioID: {
+              type: Sequelize.INTEGER,
+              allowNull: false,
+              references: {
+                  model: "funcionarios",
+                  key: "id",
+              },
+              onUpdate:"CASCADE",
+              onDelete:"CASCADE"
+>>>>>>> a378f8d0914e8cfa5eb2c194817f14aaa019e72a
             },
             custo: {
                 type: Sequelize.FLOAT,
