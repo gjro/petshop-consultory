@@ -13,6 +13,17 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
+<<<<<<< HEAD
+            dono_id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                references: {
+                    model: "donos",
+                    key: "id",
+                },
+            },
+=======
+>>>>>>> a378f8d0914e8cfa5eb2c194817f14aaa019e72a
             raca: {
                 type: Sequelize.STRING,
                 allowNull: false,
