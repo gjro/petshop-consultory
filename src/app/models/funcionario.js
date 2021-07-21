@@ -5,14 +5,17 @@ class Funcionario extends Model {
         super.init(
             {
                 nome: Sequelize.STRING,
-                CPF: Sequelize.STRING,
-                Cargo: Sequelize.STRING,
+                cpf: Sequelize.STRING,
+                cargo: Sequelize.STRING,
                 
             },
             {
                 sequelize,
             }
         )
+    }
+    static associate(models){
+        this.hasMany(models.Consulta);
     }
 }
 

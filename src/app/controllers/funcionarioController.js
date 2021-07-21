@@ -48,7 +48,7 @@ class funcionarioControllers {
             const retornoStatus = id >= 0 ? 200 : 400;
 
             const funcionario = await Funcionario.findByPk(id);
-            const novoFuncionario = await empresa.update({
+            const novoFuncionario = await funcionario.update({
                 nome,
                 cpf,
                 cargo,
@@ -64,10 +64,10 @@ class funcionarioControllers {
     async destroy(req, res) {
         try {
             const id = parseInt(req.params.id);
-            const empresa = await Funcionario.findByPk(id);
+            const funcionario = await Funcionario.findByPk(id);
             const status = id >= 0 ? 200 : 404;
 
-            empresa.destroy();
+            funcionario.destroy();
 
             return res.status(status);
         } catch (e) {

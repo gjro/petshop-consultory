@@ -9,26 +9,6 @@ module.exports = {
                 autoIncrement: true,
                 primaryKey: true,
             },            
-            petID: {
-                type: Sequelize.INTEGER,
-                allowNull: false,
-                references: {
-                    model: "pets",
-                    key: "id",
-                },
-                onUpdate:"CASCADE",
-                onDelete:"CASCADE"
-            },
-            funcionarioID: {
-              type: Sequelize.INTEGER,
-              allowNull: false,
-              references: {
-                  model: "funcionarios",
-                  key: "id",
-              },
-              onUpdate:"CASCADE",
-              onDelete:"CASCADE"
-            },
             custo:{
               type:Sequelize.FLOAT,
               allowNull: false,
@@ -41,6 +21,26 @@ module.exports = {
                 type: Sequelize.DATE,
                 allowNull: false,
             },
+            pet_id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                references: {
+                    model: "pets",
+                    key: "id",
+                },
+                onUpdate:"CASCADE",
+                onDelete:"CASCADE"
+            },
+            funcionario_id: {
+              type: Sequelize.INTEGER,
+              allowNull: false,
+              references: {
+                  model: "funcionarios",
+                  key: "id",
+              },
+              onUpdate:"CASCADE",
+              onDelete:"CASCADE"
+            }
         });
     },
 

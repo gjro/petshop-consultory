@@ -68,8 +68,8 @@ class donosControllers {
             const status = id >= 0 ? 200 : 404;
 
             dono.destroy();
-
             return res.status(status) + "destruido com sucesso";
+            
         } catch (e) {
             console.log("Error: " + e);
         }

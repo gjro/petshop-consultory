@@ -7,7 +7,6 @@ class Dono extends Model {
                 nome: Sequelize.STRING,
                 cpf: Sequelize.STRING,
                 telefone: Sequelize.STRING,
-                //status: Sequelize.ENUM("ACTIVE", "ARCHIVED"),
             },
             {
                 sequelize,
