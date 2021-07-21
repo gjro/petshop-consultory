@@ -14,7 +14,7 @@ class Pet extends Model {
     }
     
     static associate(models){
-        this.belongsTo(models.Dono, { foreignKey: "dono_id" });
+        this.belongsTo(models.Dono, { foreignKey: "dono_id" })
         this.hasMany(models.Consulta);
     }
 }

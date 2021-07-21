@@ -41,7 +41,13 @@ module.exports = {
               onUpdate:"CASCADE",
               onDelete:"CASCADE"
             }
-        });
+        },
+        {
+            freezeTableName: true,
+            tableName: "consultas"
+        }
+        
+        );
     },
 
     down: async (queryInterface, Sequelize) => {

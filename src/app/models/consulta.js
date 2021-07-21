@@ -8,6 +8,7 @@ class Consulta extends Model {
             },
             {
                 sequelize,
+                tableName: 'consultas'
             }
         )
     }
